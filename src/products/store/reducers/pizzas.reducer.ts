@@ -16,12 +16,15 @@ const initialState: PizzaState = {
 export function reducer(state = initialState, action: fromPizzas.PizzasAction): PizzaState {
   switch (action.type) {
     case fromPizzas.LOAD_PIZZAS: {
-      console.log('LoadPizzas', state);
-      return { ...state, loading: true, loaded: false };
+      const newState = { ...state, loading: true, loaded: false };
+      console.log('LoadPizzas', newState);
+      return newState;
     }
     case fromPizzas.LOAD_PIZZAS_SUCCESS: {
       const pizzas = action.payload;
-      return { ...state, pizzas, loading: false, loaded: true };
+      const newState = { ...state, pizzas, loading: false, loaded: true };
+      console.log('LoadPizzasSuccess', newState);
+      return newState;
     }
   }
   return state;
