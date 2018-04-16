@@ -1,3 +1,5 @@
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -37,6 +39,8 @@ export const ROUTES: Routes = [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forFeature('products', {}),
+    EffectsModule.forFeature([]),
     RouterModule.forChild(ROUTES),
   ],
   providers: [...fromGuards.guards, ...fromServices.services],
