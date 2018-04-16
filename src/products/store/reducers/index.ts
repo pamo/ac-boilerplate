@@ -15,3 +15,4 @@ export const reducers: ActionReducerMap<ProductsState> = {
 export const getProductState = createFeatureSelector<ProductsState>('products');
 export const getPizzaState = createSelector(getProductState, (state: ProductsState) => state.pizzas)
 export const getPizzas = createSelector(getPizzaState, fromPizzas.getPizzas)
+export const getSelectedPizza = createSelector(getPizzaState, fromPizzas.getSelectedPizza)
