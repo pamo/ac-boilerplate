@@ -1,3 +1,4 @@
+import { reducers } from './store';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { NgModule } from '@angular/core';
@@ -39,7 +40,7 @@ export const ROUTES: Routes = [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forFeature('products', {}),
+    StoreModule.forFeature('products', reducers),
     EffectsModule.forFeature([]),
     RouterModule.forChild(ROUTES),
   ],
